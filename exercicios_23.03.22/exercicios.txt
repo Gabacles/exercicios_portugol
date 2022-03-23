@@ -1,0 +1,216 @@
+1. Faça um sistema que leia a idade de uma pessoa expressa em anos, meses e
+dias e mostre-a expressa apenas em dias.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro anos, meses, dias, total
+		inteiro diasAno = 365
+		inteiro diasMes = 30
+
+		escreva("Digite quantos anos você tem exatamente. Nesta ordem: idade, meses e dias de vida: ")
+		leia(anos, meses, dias)
+
+		anos = anos * diasAno
+		meses = meses * diasMes
+		
+		total = anos + meses + dias
+
+		escreva("\nVocê tem ", total, " dias de vida")
+	}
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+2. Faça um sistema que leia a idade de uma pessoa expressa em dias e mostre-a
+expressa em anos, meses e dias.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro anos, meses, dias, diasTotais
+		inteiro ano = 365
+		inteiro mes = 30
+		
+
+		escreva("Digite sua idade em dias: ")
+		leia(diasTotais)
+
+		anos = diasTotais / ano
+		meses = (diasTotais - (ano * anos)) / mes
+		dias = (diasTotais - (ano * anos)) % mes
+
+		escreva("\nVocê tem ", anos, " ano(s), ", meses, " mes(es) e ", dias, " dias.")
+	}
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+3. Faça um sistema que leia o tempo de duração de um evento em uma fábrica
+expressa em segundos e mostre-o expresso em horas, minutos e segundos.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro horas, minutos, segundos, segundosTotais
+		inteiro hora = 3600
+		inteiro minuto = 60
+
+		escreva("Digite quantos segundos duraram o evento: ")
+		leia(segundosTotais)
+
+		horas = segundosTotais / hora
+		minutos = (segundosTotais - (hora * horas)) / minuto
+		segundos = (segundosTotais - (hora * horas)) % minuto
+
+		escreva("\nO evento durou ", horas, " hora(s), ", minutos, " minuto(s) e ", segundos, " segundo(s).")
+		
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+4. Escreva um sistema que leia três números inteiros e positivos (A, B, C) e
+calcule
+
+programa
+{
+	inclua biblioteca Matematica--> mat
+	
+	funcao inicio()
+	{
+		inteiro a, b, c, d, r, s
+
+		escreva("Digite o primeiro número inteiro positivo: ")
+		leia(a)
+
+		escreva("\nDigite o segundo número inteiro positivo: ")
+		leia(b)
+
+		escreva("\nDigite o terceiro número inteiro positivo: ")
+		leia(c)
+		
+		r = mat.potencia((a + b), 2)
+		s = mat.potencia((b + c), 2)
+		
+		d = (r + s) / 2
+
+		escreva("\nO resultado da expressão é ", d)
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+5. Faça um sistema que leia as 3 notas de um aluno e calcule a média final deste
+aluno. Considerar que a média é ponderada e que o peso das notas é: 2,3 e 5,
+respectivamente.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro peso1 = 2
+		inteiro peso2 = 3
+		inteiro peso3 = 5
+		real nota1, nota2, nota3
+		real mediaFinal
+
+		escreva("Digite suas 3 notas: ")
+		leia(nota1, nota2, nota3)
+
+		mediaFinal = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1 + peso2 + peso3)
+
+		escreva("Sua média final é ", mediaFinal)
+		
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+6. Construa um programa em c que, tendo como dados de entrada dois pontos
+quaisquer no plano, P(x1, y1) e P(x2, y2), escreva a distância entre eles. A fórmula que efetua tal cálculo é:
+
+programa
+{
+	inclua biblioteca Matematica-->mat
+	
+	funcao inicio()
+	{
+		real x1, x2, y1, y2, d
+
+		escreva("Vamos calcular a distância entre dois pontos.")
+
+		escreva("\nDigite o valor de x1: ")
+		leia(x1)
+
+		escreva("\nDigite o valor de x2: ")
+		leia(x2)
+
+		escreva("\nDigite o valor de y1: ")
+		leia(y1)
+
+		escreva("\nDigite o valor de y2: ")
+		leia(y2)
+
+		d = mat.raiz(mat.potencia((x2 - x1), 2) + (mat.potencia((y2 - y1), 2)), 2)
+		
+		escreva("A distância é ", d)
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+7. Um sistema de equações lineares do tipo:
+a.x + b.y = c
+d.x + e.y = f
+x = (c.e - b.f)/(a.e - b.d)
+y = (a.f - c.d)/(a.e - b.d)
+Escreva um algoritmo que lê os coeficientes a,b,c,d,e e f e calcula e mostra os valores de x e y.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		real a, b, c, d, E, f, x, y
+
+		escreva("Digite seis coeficientes (um de cada vez): ")
+		leia(a, b, c, d, E, f)
+
+		x = ((c * E) - (b * f)) / ((a * E) - (b * d))
+		y = ((a * f) - (c * d)) / ((a * E) - (b * d))
+
+		escreva("\nValor de x: ", x, ", Valor de y: ",y)
+		
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+8. O custo ao consumidor de um carro novo é a soma do custo de fábrica com a
+percentagem do distribuidor e dos impostos (aplicados ao custo de fábrica).
+Supondo que a percentagem do distribuidor seja de 28% e os impostos de 45%,
+escrever um sistema que leia o custo de fábrica de um carro e escreva o custo ao
+consumidor.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		 inteiro porcentagemDistribuidor = 28
+		 inteiro imposto = 45
+		 real custoAutomovel, acrescimo, valorFinal
+
+		 escreva("Digite o custo de fábrica do automóvel: ")
+		 leia(custoAutomovel)
+
+		acrescimo = (custoAutomovel * (porcentagemDistribuidor + imposto)) / 100
+		valorFinal = custoAutomovel + acrescimo
+
+		escreva("O valor final do carro é: ", valorFinal)
+		
+	}
+}
